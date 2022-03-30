@@ -16,6 +16,7 @@
     --color-black: #000000;
     --Color-pastel-light-blue: #bce6f6;
     --color-pastel-dark-blue: #7bb8d3;
+    --color-pastel-pink: #f0c8d3;
 
     /*Font size*/
     --font-large: 48px;
@@ -32,6 +33,9 @@
 
     /*Size*/
     --size-border-radius: 4px;
+
+    /*Animation duration*/
+    --animation-duration: 300ms;
 
 }
     
@@ -80,7 +84,7 @@
         color: var(--color-black);
     }
     p {
-        font-size: var(--font-large);
+        font-size: var(--font-regular);
         font-weight: var(--font-regular);
         color: var(--color-black);
         margin: 4px 0;
@@ -118,7 +122,7 @@
 
     /*Home*/
     #home {
-        height: 900px;
+        height: 800px;
         background: url("imgs/background-image4.png") center/cover no-repeat;
         padding: 40px;
         text-align: center;
@@ -141,5 +145,70 @@
         padding: 8px 12px;
         border: 2px solid var(--color-white);
         border-radius: var(--size-border-radius);
-
     }
+    .home__contact:hover {
+        background-color: var(--color-blue);
+    }
+
+    /*Section common*/
+    .section {
+        padding: 50px;
+        text-align: center;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    /*About*/
+    #about > p {
+        color: var(--color-dark-grey);
+        font-weight: var(--weight-bold);
+       
+    }
+    .about__majors {
+        display: flex;
+        justify-content: space-between;
+        margin: 80px 0;
+    }
+    .major__icon {
+        width: 170px;
+        height: 170px;
+        line-height: 170px; /*line-height를 높이만큼 지정하면 자동으로 중간정렬*/
+        font-size: 70px;
+        margin: auto;
+        color: var(--color-blue);
+        border: 1px solid var(--color-blue);
+        border-radius: 50%;
+        margin-bottom: 16px;
+    }
+    .major__title, .major__description {
+        color: var(--color-dark-grey);
+    }
+    .major__icon i {
+        transition: all var(--animation-duration) ease;
+    }
+    .major__icon:hover i {
+        color: var(--color-pink);
+        transform: rotate(-30deg) scale(1.1);
+    }
+    .major__description {
+        font-size: var(--font-small);
+    }
+    .school {
+        display: flex;
+        align-items: center;
+    }
+    .school__description {
+        margin: 0 16px;
+        text-align: left;
+    }
+    .school__name,
+    .school_period {
+        color: var(--color-light-grey);
+    }
+    .school__name {
+        font-size: var(--font-small);
+    }
+    .school_period {
+        font-size: var(--font-micro);
+    }
+    
