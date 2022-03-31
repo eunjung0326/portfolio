@@ -63,9 +63,45 @@ arrowUp.addEventListener('click', () => {
 });
 
 
+//Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const Projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter == null) {
+        return;
+    }
+    console.log(filter);
+    projectContainer.classList.add('anim-out');
+    setTimeout(() => {
+        Projects.forEach((project) => {
+            console.log(project.dataset.type);
+            if(filter ==='*' || filter === project.dataset.type) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('anim-out');
+    }, 300);
+});
+
+
+
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({ behavior: 'smooth'});
 }
 
 //
+// console.log(`--------------`);
+    // for(let project of  Projects) {
+    //     console.log(project);
+    // }
+
+    // let project;
+    // for(let i = 0; i< Projects.length ; i++ ) {
+    //     project = Projects[i];
+    //     console.log(project);
+    // }
