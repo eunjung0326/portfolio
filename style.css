@@ -380,9 +380,9 @@
         display: block;
         position: relative;
         left: 50%;
-        width: 25px;
+        width: 50px;
         height: 2px;
-        margin-left: -12px;
+       transform: translateX(-50%);
         margin-top: 8px;
         background-color: var(--color-dark-white);
     }
@@ -444,12 +444,19 @@
         #navbar {
             flex-direction: column; /*두줄로 만들어줌*/
             align-items: flex-start; /*왼쪽으로 정렬됨*/
+            background-color: var(--Color-pastel-light-blue);
+        }
+        #navbar.navbar--dark {
+            padding: 8px;
         }
         .navbar__menu {
             flex-direction: column;
             text-align: center;
             width: 100%;
             display: none;
+        }
+        .navbar__menu.open {
+            display: block;
         }
         #home {
             height: 70%;
